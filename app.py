@@ -728,4 +728,4 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 page_html = build_full_page()
 
 st.markdown(streamlit_overrides, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=6500, scrolling=False)
+st.components.v1.html(page_html, height=5800, scrolling=False)
