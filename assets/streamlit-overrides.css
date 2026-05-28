@@ -1,6 +1,15 @@
 #MainMenu {visibility: hidden !important;}
 footer {visibility: hidden !important;}
 header {visibility: hidden !important;}
+
+/* Streamlit Cloud: botão "Manage app" com avatar do GitHub */
+[data-testid="manage-app-button"] {display: none !important;}
+[data-testid="appCreatorAvatar"] {display: none !important;}
+[data-testid="stAppViewBlockContainer"] + div {display: none !important;}
+.stDeployButton {display: none !important;}
+div[class*="viewerBadge"] {display: none !important;}
+#stDecoration {display: none !important;}
+
 div[data-testid="stDecoration"] {display: none !important;}
 div[data-testid="stHeader"] {display: none !important;}
 .block-container {
@@ -16,8 +25,4 @@ div[data-testid="stHeader"] {display: none !important;}
 iframe {
     border: none !important;
     width: 100% !important;
-    min-height: 100vh !important;
-}
-[data-testid="stIframe"] {
-    min-height: 100vh !important;
 }
