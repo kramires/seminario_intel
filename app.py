@@ -718,22 +718,6 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 <body class="bg-background text-on-surface antialiased">
 """
     footer = """
-<script>
-(function() {
-    function reportHeight() {
-        var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        window.parent.postMessage({isStreamlitMessage: true, type: 'streamlit:setFrameHeight', height: h}, '*');
-    }
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() { setTimeout(reportHeight, 300); });
-    } else {
-        setTimeout(reportHeight, 300);
-    }
-    window.addEventListener('resize', reportHeight);
-    // Dispara novamente após fontes e imagens carregarem
-    window.addEventListener('load', function() { setTimeout(reportHeight, 500); });
-})();
-</script>
 </body>
 </html>
 """
@@ -767,4 +751,4 @@ hide_ui = streamlit_overrides + """
 </script>
 """
 st.markdown(hide_ui, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=5400, scrolling=False)
+st.components.v1.html(page_html, height=5800, scrolling=False)
