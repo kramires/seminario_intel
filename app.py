@@ -509,7 +509,7 @@ html_body = f"""
                         <span class="material-symbols-outlined text-primary text-3xl">devices</span>
                         <div>
                             <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Formato Híbrido</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant">Transmissão online segura para integrantes das agências do SISBIN convidados.</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">Transmissão online segura.</p>
                             {f'<a href="{LINK_TRANSMISSAO}" target="_blank" class="inline-block mt-2 text-sm font-semibold text-primary hover:underline">Acessar transmissão ao vivo →</a>' if LINK_TRANSMISSAO else '<span class="inline-block mt-2 text-sm text-on-surface-variant/60 italic">Link de transmissão em breve</span>'}
                         </div>
                     </div>
