@@ -175,7 +175,6 @@ html_body = f"""
                 <span class="hidden sm:inline truncate">Seminário de Inteligência</span>
             </div>
             <div class="hidden md:flex gap-6 items-center">
-                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#inicio">Início</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#destaques">Destaques</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#sobre">Sobre</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#programacao">Agenda</a>
@@ -205,7 +204,6 @@ html_body = f"""
             </p>
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;">
                 <a href="#programacao" style="background:#3e5338; color:#fff; padding:0.75rem 2rem; border-radius:0.75rem; font-weight:600; text-decoration:none; display:inline-block;">Ver Programação</a>
-                <a href="#palestrantes" style="background:rgba(255,255,255,0.18); color:#fff; padding:0.75rem 2rem; border-radius:0.75rem; font-weight:600; text-decoration:none; display:inline-block; border:1px solid rgba(255,255,255,0.3);">Palestrantes</a>
             </div>
         </div>
     </section>
@@ -518,7 +516,7 @@ html_body = f"""
                         <span class="material-symbols-outlined text-primary text-3xl">military_tech</span>
                         <div>
                             <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Militares</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant">9 B2 (Exército) e similares para cada Força.</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">9° B2 (Exército) e similares para cada Força.</p>
                         </div>
                     </div>
                     <div class="p-6 rounded-xl border border-tertiary/20 bg-surface-bright flex items-center gap-4 shadow-sm">
@@ -701,7 +699,8 @@ def build_full_page():
 <script>{tailwind_config_js}</script>
 {css_content}
 <style>
-html {{ scroll-behavior: smooth; }}
+html {{ scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }}
+html::-webkit-scrollbar {{ display: none; }}
 body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 @keyframes heroSlide1 {{
     0%, 38%  {{ opacity: 1; }}
@@ -718,6 +717,19 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 <body class="bg-background text-on-surface antialiased">
 """
     footer = """
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+        var id = this.getAttribute('href').slice(1);
+        if (!id) return;
+        var el = document.getElementById(id);
+        if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+</script>
 </body>
 </html>
 """
@@ -728,4 +740,4 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 page_html = build_full_page()
 
 st.markdown(streamlit_overrides, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=5800, scrolling=False)
+st.components.v1.html(page_html, height=900, scrolling=True)

@@ -25,4 +25,10 @@ div[data-testid="stHeader"] {display: none !important;}
 iframe {
     border: none !important;
     width: 100% !important;
+    height: calc(100vh - 2px) !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+}
+iframe::-webkit-scrollbar {
+    display: none !important;
 }
