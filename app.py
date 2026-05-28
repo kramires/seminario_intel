@@ -727,28 +727,5 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 # Renderização final
 page_html = build_full_page()
 
-hide_ui = streamlit_overrides + """
-<script>
-(function() {
-    var selectors = [
-        '[data-testid="manage-app-button"]',
-        '[data-testid="appCreatorAvatar"]',
-        '[data-testid="stToolbar"]',
-        '[data-testid="stStatusWidget"]',
-        '.stDeployButton',
-        'footer'
-    ];
-    function hide() {
-        selectors.forEach(function(s) {
-            document.querySelectorAll(s).forEach(function(el) {
-                el.style.cssText = 'display:none!important;visibility:hidden!important;opacity:0!important;';
-            });
-        });
-    }
-    hide();
-    new MutationObserver(hide).observe(document.body, {childList: true, subtree: true});
-})();
-</script>
-"""
-st.markdown(hide_ui, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=5800, scrolling=False)
+st.markdown(streamlit_overrides, unsafe_allow_html=True)
+st.components.v1.html(page_html, height=6500, scrolling=False)
