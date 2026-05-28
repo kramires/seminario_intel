@@ -718,6 +718,22 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 <body class="bg-background text-on-surface antialiased">
 """
     footer = """
+<script>
+(function() {
+    function reportHeight() {
+        var h = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        window.parent.postMessage({isStreamlitMessage: true, type: 'streamlit:setFrameHeight', height: h}, '*');
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { setTimeout(reportHeight, 300); });
+    } else {
+        setTimeout(reportHeight, 300);
+    }
+    window.addEventListener('resize', reportHeight);
+    // Dispara novamente após fontes e imagens carregarem
+    window.addEventListener('load', function() { setTimeout(reportHeight, 500); });
+})();
+</script>
 </body>
 </html>
 """
@@ -727,5 +743,28 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 # Renderização final
 page_html = build_full_page()
 
-st.markdown(streamlit_overrides, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=6500, scrolling=False)
+hide_ui = streamlit_overrides + """
+<script>
+(function() {
+    var selectors = [
+        '[data-testid="manage-app-button"]',
+        '[data-testid="appCreatorAvatar"]',
+        '[data-testid="stToolbar"]',
+        '[data-testid="stStatusWidget"]',
+        '.stDeployButton',
+        'footer'
+    ];
+    function hide() {
+        selectors.forEach(function(s) {
+            document.querySelectorAll(s).forEach(function(el) {
+                el.style.cssText = 'display:none!important;visibility:hidden!important;opacity:0!important;';
+            });
+        });
+    }
+    hide();
+    new MutationObserver(hide).observe(document.body, {childList: true, subtree: true});
+})();
+</script>
+"""
+st.markdown(hide_ui, unsafe_allow_html=True)
+st.components.v1.html(page_html, height=5400, scrolling=False)
