@@ -1,0 +1,23 @@
+#MainMenu {visibility: hidden !important;}
+footer {visibility: hidden !important;}
+header {visibility: hidden !important;}
+div[data-testid="stDecoration"] {display: none !important;}
+div[data-testid="stHeader"] {display: none !important;}
+.block-container {
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+    max-width: 100% !important;
+}
+.stApp {
+    background-color: #fcf9f2 !important;
+}
+iframe {
+    border: none !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+}
+[data-testid="stIframe"] {
+    min-height: 100vh !important;
+}

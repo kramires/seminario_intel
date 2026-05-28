@@ -1,0 +1,48 @@
+```json
+{
+    "SEMINÁRIO DE INTELIGÊNCIA": "A ATIVIDADE DE INTELIGÊNCIA E OS DESAFIOS DA ATUALIDADE.",
+    "1. FINALIDADE": "Regular as atividades relativas ao Seminário de Inteligência no contexto das comemorações do transcurso do 32º aniversário da Escola de Inteligência Militar do Exército (EsIMEx), a realizar-se nos dias 1º e 02 de julho de 2026.",
+    "3. OBJETIVOS": [
+        "Realizar o intercâmbio doutrinário entre instituições e profissionais da Comunidade de Inteligência por meio de um seminário temático.",
+        "Comemorar o 32º Aniversário da Escola de Inteligência Militar do Exército (EsIMEx).",
+        "Ampliar a consciência situacional do Sistema de Inteligência do Exército (SIEx) quanto à doutrina de Inteligência no Brasil.",
+        "Fortalecer a integração e colaboração entre o Exército Brasileiro e outros órgãos que compõem o SISBIN."
+    ],
+    "a. Concepção": "O Seminário de Inteligência foi concebido para promover a discussão na área temática de interesse da doutrina de Inteligência Militar, com a participação presencial de palestrantes nacionais. O evento também poderá ser acompanhado de forma virtual.",
+    "2) Temas propostos": "Conforme Anexo A. Os palestrantes poderão contextualizar o tema com fatos da atualidade.",
+    "c. Inscrições": [
+        "Convidados – pela confirmação em documentos oficiais.",
+        "Integrantes do SIEx e demais agências do SISBIN – pela confirmação dos convites expedidos."
+    ],
+    "3) Simpósio": "01 1400-1800 Jul e 02 0900-1700 Jul 26.",
+    "f. Uniforme/trajes": {
+        "Militares": "o da atividade.",
+        "Civis": "esporte fino."
+    },
+    "h. Palestrantes": "6 (seis) palestrantes, conforme Anexo A. Cada palestrante terá 60 (sessenta) minutos para sua apresentação. Haverá, após cada painel, 30 min de debates. Na fase de debates, 01 (um) militar da Div Ensino atuará como mediador, sendo responsável por conduzir os Painéis e os debates.",
+    "ANEXO A – Programação Geral do Seminário": {
+        "01 JUL 26 (4ª feira)": [
+            "1400h-1420h: Recepção e cadastramento dos participantes (Local: CIE / EsIMEx; Responsáveis: Com Soc e OSO/EsIMEx).",
+            "1420h-1440h: ABERTURA do Smr Intlg (Local: Auditório General Sydrião - EsIMEx; Responsável: Ch CIE).",
+            "1440h-1540h: Painel 1 – Legislação e Ética: A Atv Intlg e o seu amparo legal (Palestrante: Senador Gen Ex Mourão - CCAI).",
+            "1540h-1600h: INTERVALO - coffee break (Local: Salão de Honra; Responsável: Div Adm).",
+            "1600h-1700h: Painel 1 – Legislação e Ética: A ética no exercício da Atv Intlg (Local: Auditório General Sydrião - EsIMEx; Palestrante: Anna Cruz - Esint).",
+            "1700h-1730h: DEBATES (Local: Auditório General Sydrião - EsIMEx; Responsável: Div Dout Pesq)."
+        ],
+        "02 JUL 26 (5ª feira)": [
+            "0900h-0920h: Recepção dos participantes (Local: CIE / EsIMEx; Responsáveis: Com Soc e OSO/EsIMEx).",
+            "0900h-0920h: ABERTURA da 2ª jornada do SIIM (Local: Auditório General Sydrião - EsIMEx; Responsável: Ch CIE).",
+            "0920h-0950h: Painel 2 – Contrainteligência: Defesa Cognitiva (Palestrante: Prof Doutor Wellington - ESD).",
+            "0950h-1030h: Painel 2 – Contrainteligência: Desinformação e fake news (Palestrante: Maurício Viegas - STF).",
+            "1030h-1100h: INTERVALO - coffee break (Local: Salão de Honra; Responsável: Div Adm).",
+            "1100h-1130h: DEBATES (Local: Auditório General Sydrião - EsIMEx; Responsável: Div Dout Pesq).",
+            "1200h-1330h: ALMOÇO COMEMORATIVO (Local: Praça do Maracujá; Responsável: Aprov/CIE).",
+            "1400h-1440h: Painel 3 – Tecnologia: Emprego da IA na Atv Intlg (Local: Auditório General Sydrião - EsIMEx; Palestrante: TC R1 Heitor - Pluvia).",
+            "1440h-1520h: Painel 3 – Tecnologia: O ArcGIS e os conflitos atuais (Palestrante: Márcio Lopes - Imagem).",
+            "1520h-1540h: INTERVALO (Local: Salão de Honra; Responsável: Div Adm).",
+            "1540h-1710h: DEBATES (Local: Auditório General Sydrião - EsIMEx; Responsável: Div Ensino).",
+            "1710h-1730h: ENCERRAMENTO (Responsável: Ch CIE)."
+        ]
+    }
+}
+```
