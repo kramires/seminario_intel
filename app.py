@@ -101,7 +101,7 @@ def b64(relative_path):
 
 img_qrcode    = b64("imagens/qrcode.png")
 img_mourao    = b64("imagens/palestrantes/genMourao.jpeg")
-img_anna      = b64("assets/anna.png")
+_anna_placeholder = '<div class="w-32 h-32 rounded-full border-4 border-primary mb-4 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-on-surface-variant">person</span></div>'
 img_wellington = b64("imagens/palestrantes/profWellington.jpeg")
 img_mauricio  = b64("imagens/palestrantes/mauriciuViegas.jpeg")
 img_heitor    = b64("imagens/palestrantes/Tc R1 Heitor.jpeg")
@@ -399,7 +399,7 @@ html_body = f"""
                 
                 <!-- Palestrante 2 -->
                 <div class="glass-panel p-6 rounded-xl border border-outline-variant/20 bg-surface-container-low text-center flex flex-col items-center hover-lift">
-                    <img class="w-32 h-32 rounded-full object-cover border-4 border-primary mb-4" src="{img_anna}" alt="Anna Cruz">
+                    {_anna_placeholder}
                     <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Anna Cruz</h4>
                     <p class="font-label-caps text-label-caps text-tertiary mb-4">Esint / ABIN</p>
                     <button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300" onclick="showBio('anna')">
@@ -636,7 +636,7 @@ html_body = f"""
                 "name": "Anna Cruz",
                 "role": "Instrutora da Escola de Inteligência (Esint)",
                 "bio": "Pesquisadora sênior da Escola de Inteligência (Esint) da ABIN. Doutora em Segurança e Defesa, com mais de 15 anos de atuação dedicados ao estudo de diretrizes doutrinárias de inteligência civil e estatal, bem como dilemas éticos na atividade.",
-                "image": "{img_anna}"
+                "image": ""
             }},
             "wellington": {{
                 "name": "Prof. Dr. Wellington",
