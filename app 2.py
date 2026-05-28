@@ -108,17 +108,6 @@ img_heitor    = b64("imagens/palestrantes/Tc R1 Heitor.jpeg")
 img_marcio    = b64("imagens/palestrantes/marcioLopes.jpeg")
 img_hero      = b64("imagens/esimex_noturna.jpg")
 img_concepcao = b64("imagens/banner.jpeg")
-img_auditorio = b64("imagens/auditorio_seminario.jpeg")
-
-_brasil_path = os.path.join(BASE_DIR, "imagens", "palestrantes", "cel_brasil.jpeg")
-if os.path.exists(_brasil_path):
-    img_brasil = b64("imagens/palestrantes/cel_brasil.jpeg")
-    _brasil_img_tag = f'<img class="w-32 h-32 rounded-full object-cover border-4 border-primary mb-4" src="{img_brasil}" alt="Cel R1 Mario Brasil">'
-    _brasil_modal_img = img_brasil
-else:
-    img_brasil = ""
-    _brasil_img_tag = '<div class="w-32 h-32 rounded-full border-4 border-primary mb-4 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-on-surface-variant">person</span></div>'
-    _brasil_modal_img = ""
 img_esimex_symbol = b64("imagens/simbolo_esimex1.png")
 img_cie_symbol    = b64("imagens/simbolo_cie.png")
 
@@ -186,6 +175,7 @@ html_body = f"""
                 <span class="hidden sm:inline truncate">Seminário de Inteligência</span>
             </div>
             <div class="hidden md:flex gap-6 items-center">
+                <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#inicio">Início</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#destaques">Destaques</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#sobre">Sobre</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#programacao">Agenda</a>
@@ -211,10 +201,11 @@ html_body = f"""
                 {event_data["SEMINÁRIO DE INTELIGÊNCIA"]}
             </h1>
             <p style="font-size:1.1rem; color:rgba(255,255,255,0.82); max-width:38rem; margin:0 auto 2rem; line-height:1.6;">
-                Painéis estratégicos, intercâmbio de inteligência e segurança cibernética aplicada à defesa nacional
+                Painéis estratégicos, intercâmbio de inteligência e segurança cibernética aplicada à defesa nacional.
             </p>
             <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;">
                 <a href="#programacao" style="background:#3e5338; color:#fff; padding:0.75rem 2rem; border-radius:0.75rem; font-weight:600; text-decoration:none; display:inline-block;">Ver Programação</a>
+                <a href="#palestrantes" style="background:rgba(255,255,255,0.18); color:#fff; padding:0.75rem 2rem; border-radius:0.75rem; font-weight:600; text-decoration:none; display:inline-block; border:1px solid rgba(255,255,255,0.3);">Palestrantes</a>
             </div>
         </div>
     </section>
@@ -307,7 +298,7 @@ html_body = f"""
                 </div>
             </div>
             <div class="lg:col-span-7 order-1 lg:order-2 rounded-xl overflow-hidden soft-shadow h-[420px] border border-outline-variant/20">
-                <img alt="Concepção do Seminário" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="{img_auditorio}">
+                <img alt="Concepção do Seminário" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105" src="{img_concepcao}">
             </div>
         </section>
 
@@ -417,16 +408,6 @@ html_body = f"""
                     </button>
                 </div>
                 
-                <!-- Palestrante 3b - Cel R1 Brasil -->
-                <div class="glass-panel p-6 rounded-xl border border-outline-variant/20 bg-surface-container-low text-center flex flex-col items-center hover-lift">
-                    {_brasil_img_tag}
-                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Cel R1 Mario Brasil</h4>
-                    <p class="font-label-caps text-label-caps text-tertiary mb-4">ESD</p>
-                    <button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300" onclick="showBio('brasil')">
-                        Ver Biografia
-                    </button>
-                </div>
-
                 <!-- Palestrante 4 -->
                 <div class="glass-panel p-6 rounded-xl border border-outline-variant/20 bg-surface-container-low text-center flex flex-col items-center hover-lift">
                     <img class="w-32 h-32 rounded-full object-cover object-top border-4 border-primary mb-4" src="{img_mauricio}" alt="Maurício Viegas">
@@ -471,8 +452,12 @@ html_body = f"""
                     </h3>
                     <div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">
                         <p class="leading-relaxed">
-                            A inscrição é obrigatória tanto para a modalidade presencial quanto para acompanhamento online.
+                            A inscrição é obrigatória tanto para a modalidade presencial quanto para acompanhamento online. Conforme regulação:
                         </p>
+                        <ul class="list-disc list-inside space-y-2 text-base text-on-surface-variant">
+                            <li><strong>Convidados Oficiais:</strong> confirmação automática via convite/documento interno.</li>
+                            <li><strong>Integrantes do SIEx e agências do SISBIN:</strong> confirmação do link expedido formalmente.</li>
+                        </ul>
                     </div>
                     <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
                         Acessar Formulário de Inscrição
@@ -533,7 +518,7 @@ html_body = f"""
                         <span class="material-symbols-outlined text-primary text-3xl">military_tech</span>
                         <div>
                             <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Militares</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant">9° B2 (Exército) e similares para cada Força.</p>
+                            <p class="font-body-md text-body-md text-on-surface-variant">9 B2 (Exército) e similares para cada Força.</p>
                         </div>
                     </div>
                     <div class="p-6 rounded-xl border border-tertiary/20 bg-surface-bright flex items-center gap-4 shadow-sm">
@@ -600,8 +585,8 @@ html_body = f"""
             </div>
             <div class="col-span-1 flex flex-col gap-3 mt-6 md:mt-0">
                 <h5 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Contato e Apoio</h5>
-                <span class="text-on-surface-variant text-sm">Divisão de Doutrina e Pesquisa / EsIMEx</span>
-                <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="mailto:ddp@esimex.eb.mil.br">ddp@esimex.eb.mil.br</a>
+                <span class="text-on-surface-variant text-sm">Divisão de Ensino / EsIMEx</span>
+                <span class="text-on-surface-variant text-sm">Email: comsoc@esimex.eb.mil.br</span>
                 <span class="text-on-surface-variant text-sm">Local: SMU - Brasília, DF</span>
             </div>
         </div>
@@ -644,18 +629,11 @@ html_body = f"""
                 "bio": "Doutor em Ciências Políticas e analista sênior da Escola Superior de Defesa. Suas pesquisas enfocam psicologia social aplicada e Defesa Cognitiva, desenvolvendo contramedidas contra guerra híbrida e ações de desinformação estratégica.",
                 "image": "{img_wellington}"
             }},
-            "brasil": {{
-                "name": "Cel R1 Mario Brasil do Nascimento",
-                "role": "Diretor do Curso de Defesa e Geopolítica – ESD",
-                "bio": "Diretor do Curso de Defesa e Geopolítica da Escola Superior de Defesa. Possui mais de 10 anos de experiência no Exército Brasileiro, com atuação em inteligência estratégica, gestão de projetos e avaliação de políticas públicas. Tem formação em relações internacionais, resolução de conflitos e ciências militares, dedicando-se ao desenvolvimento de lideranças e à inovação no setor de defesa.",
-                "image": "{_brasil_modal_img}"
-            }},
             "mauricio": {{
                 "name": "Maurício Viegas",
                 "role": "Assessor de Tecnologia do STF",
                 "bio": "Bacharel em Direito e Engenharia de Computação, assessora o STF em temas cibernéticos. Referência em Direito Digital, coordena grupos de estudo voltados para o combate à desinformação estruturada e o amparo constitucional da verdade pública.",
-                "image": "{img_mauricio}",
-                "objectPos": "top"
+                "image": "{img_mauricio}"
             }},
             "heitor": {{
                 "name": "TC R1 Heitor",
@@ -692,9 +670,7 @@ html_body = f"""
                 document.getElementById('modal-name').innerText = data.name;
                 document.getElementById('modal-role').innerText = data.role;
                 document.getElementById('modal-bio').innerText = data.bio;
-                const img = document.getElementById('modal-img');
-                img.src = data.image;
-                img.style.objectPosition = data.objectPos || 'center';
+                document.getElementById('modal-img').src = data.image;
                 document.getElementById('bio-modal').classList.add('active');
             }}
         }}
@@ -725,8 +701,7 @@ def build_full_page():
 <script>{tailwind_config_js}</script>
 {css_content}
 <style>
-html {{ scroll-behavior: smooth; scrollbar-width: none; -ms-overflow-style: none; }}
-html::-webkit-scrollbar {{ display: none; }}
+html {{ scroll-behavior: smooth; }}
 body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 @keyframes heroSlide1 {{
     0%, 38%  {{ opacity: 1; }}
@@ -743,19 +718,6 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
 <body class="bg-background text-on-surface antialiased">
 """
     footer = """
-<script>
-document.querySelectorAll('a[href^="#"]').forEach(function(a) {
-    a.addEventListener('click', function(e) {
-        var id = this.getAttribute('href').slice(1);
-        if (!id) return;
-        var el = document.getElementById(id);
-        if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-    });
-});
-</script>
 </body>
 </html>
 """
@@ -766,4 +728,4 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
 page_html = build_full_page()
 
 st.markdown(streamlit_overrides, unsafe_allow_html=True)
-st.components.v1.html(page_html, height=900, scrolling=True)
+st.components.v1.html(page_html, height=6500, scrolling=False)
