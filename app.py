@@ -22,9 +22,15 @@ st.set_page_config(
 # ==========================================================================
 # HELPER: ASSETS ESTÁTICOS (servidos pelo Streamlit em /app/static/)
 # ==========================================================================
-STATIC_ASSETS_DIR = os.path.join("static", "assets")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-ASSET_SOURCE_DIRS = ("assets", "imagens", "imagens/palestrantes")
+STATIC_ASSETS_DIR = os.path.join(BASE_DIR, "static", "assets")
+
+ASSET_SOURCE_DIRS = (
+    os.path.join(BASE_DIR, "assets"),
+    os.path.join(BASE_DIR, "imagens"),
+    os.path.join(BASE_DIR, "imagens", "palestrantes"),
+)
 
 def sync_static_assets():
     """Copia assets/, imagens/ e imagens/palestrantes/ para static/assets/."""
@@ -56,7 +62,7 @@ def image_to_data_url(path):
 
 # Carrega os dados do arquivo JSON de extração, limpando marcações markdown se existirem
 def load_event_data():
-    with open("extrato_os.json", "r", encoding="utf-8") as f:
+    with open(os.path.join(BASE_DIR, "extrato_os.json"), "r", encoding="utf-8") as f:
         content = f.read().strip()
         if content.startswith("```json"):
             content = content[7:]
@@ -77,13 +83,13 @@ def load_file(path):
     return ""
 
 def load_css():
-    return f"<style>{load_file('assets/style.css')}</style>"
+    return f"<style>{load_file(os.path.join(BASE_DIR, 'assets', 'style.css'))}</style>"
 
 def load_streamlit_overrides():
-    return f"<style>{load_file('assets/streamlit-overrides.css')}</style>"
+    return f"<style>{load_file(os.path.join(BASE_DIR, 'assets', 'streamlit-overrides.css'))}</style>"
 
 def load_tailwind_config():
-    return load_file("assets/tailwind.config.js")
+    return load_file(os.path.join(BASE_DIR, "assets", "tailwind.config.js"))
 
 css_content = load_css()
 streamlit_overrides = load_streamlit_overrides()
@@ -724,16 +730,17 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
     return head + body + footer
 
 # Renderização final na interface Streamlit
-STATIC_PAGE = os.path.join("static", "seminario.html")
+STATIC_PAGE = os.path.join(BASE_DIR, "static", "seminario.html")
 
 def ensure_static_page():
-    os.makedirs("static", exist_ok=True)
+    os.makedirs(os.path.join(BASE_DIR, "static"), exist_ok=True)
     sync_static_assets()
     page_html = build_full_page()
     needs_write = not os.path.exists(STATIC_PAGE)
     if not needs_write:
         src_mtime = os.path.getmtime(__file__)
-        for path in ("assets/style.css", *[
+        style_css = os.path.join(BASE_DIR, "assets", "style.css")
+        for path in (style_css, *[
             os.path.join(d, f)
             for d in ASSET_SOURCE_DIRS
             if os.path.isdir(d)
