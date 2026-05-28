@@ -95,26 +95,21 @@ css_content = load_css()
 streamlit_overrides = load_streamlit_overrides()
 tailwind_config_js = load_tailwind_config()
 
-sync_static_assets()
+def b64(relative_path):
+    """Retorna data URL base64 para um arquivo relativo ao BASE_DIR."""
+    return image_to_data_url(os.path.join(BASE_DIR, relative_path))
 
-# URLs servidas pelo Streamlit (HTML leve, iframe mede altura corretamente)
-img_qrcode = static_asset_url("qrcode.png")
-img_mourao = static_asset_url("genMourao.jpeg")
-img_anna = static_asset_url("anna.png")          # sem foto ainda
-img_wellington = static_asset_url("profWellington.jpeg")
-img_mauricio = static_asset_url("mauriciuViegas.jpeg")
-img_heitor = static_asset_url("Tc_R1_Heitor.jpeg")
-img_marcio = static_asset_url("marcioLopes.jpeg")
-
-img_cyber = static_asset_url("gallery_cyber.png")
-img_geo = static_asset_url("gallery_geo.png")
-img_ops = static_asset_url("gallery_ops.png")
-img_ai = static_asset_url("gallery_ai.png")
-
-img_hero = static_asset_url("esimex_noturna.jpg")
-img_esimex_symbol = static_asset_url("simbolo_esimex1.png")
-img_cie_symbol = static_asset_url("simbolo_cie.png")
-img_concepcao = static_asset_url("banner.jpeg")
+img_qrcode    = b64("imagens/qrcode.png")
+img_mourao    = b64("imagens/palestrantes/genMourao.jpeg")
+img_anna      = b64("assets/anna.png")
+img_wellington = b64("imagens/palestrantes/profWellington.jpeg")
+img_mauricio  = b64("imagens/palestrantes/mauriciuViegas.jpeg")
+img_heitor    = b64("imagens/palestrantes/Tc R1 Heitor.jpeg")
+img_marcio    = b64("imagens/palestrantes/marcioLopes.jpeg")
+img_hero      = b64("imagens/esimex_noturna.jpg")
+img_concepcao = b64("imagens/banner.jpeg")
+img_esimex_symbol = b64("imagens/simbolo_esimex1.png")
+img_cie_symbol    = b64("imagens/simbolo_cie.png")
 
 # ==========================================================================
 # PARSER: TIMELINE DINÂMICA
@@ -195,8 +190,8 @@ html_body = f"""
 
     <!-- 2. HERO SECTION — slideshow com crossfade -->
     <section id="inicio" style="position:relative; width:100%; height:600px; min-height:480px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; margin-bottom:6rem;">
-        <img src="/app/static/assets/esimex_noturna.jpg" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; z-index:0; animation:heroSlide1 14s ease-in-out infinite;">
-        <img src="/app/static/assets/banner.jpeg" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:0; animation:heroSlide2 14s ease-in-out infinite; opacity:0;">
+        <img src="{img_hero}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; z-index:0; animation:heroSlide1 14s ease-in-out infinite;">
+        <img src="{img_concepcao}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:0; animation:heroSlide2 14s ease-in-out infinite; opacity:0;">
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.38) 100%);"></div>
         <div style="position:relative; z-index:2; text-align:center; padding:0 2rem 3rem; max-width:56rem; width:100%;">
             <span style="display:inline-block; padding:0.25rem 0.75rem; background:rgba(255,255,255,0.2); color:#fff; font-size:0.75rem; font-weight:600; border-radius:9999px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">
@@ -729,34 +724,8 @@ body {{ margin: 0; padding: 0; overflow-x: hidden; min-height: 100vh; }}
     body = textwrap.dedent(html_body).strip()
     return head + body + footer
 
-# Renderização final na interface Streamlit
-STATIC_PAGE = os.path.join(BASE_DIR, "static", "seminario.html")
-
-def ensure_static_page():
-    os.makedirs(os.path.join(BASE_DIR, "static"), exist_ok=True)
-    sync_static_assets()
-    page_html = build_full_page()
-    needs_write = not os.path.exists(STATIC_PAGE)
-    if not needs_write:
-        src_mtime = os.path.getmtime(__file__)
-        style_css = os.path.join(BASE_DIR, "assets", "style.css")
-        for path in (style_css, *[
-            os.path.join(d, f)
-            for d in ASSET_SOURCE_DIRS
-            if os.path.isdir(d)
-            for f in os.listdir(d)
-            if f.endswith((".png", ".jpg", ".jpeg", ".webp"))
-        ]):
-            if os.path.exists(path):
-                src_mtime = max(src_mtime, os.path.getmtime(path))
-        needs_write = os.path.getmtime(STATIC_PAGE) < src_mtime
-    if needs_write:
-        with open(STATIC_PAGE, "w", encoding="utf-8") as f:
-            f.write(page_html)
-    return "/app/static/seminario.html"
-
-ensure_static_page()
-PAGE_URL = "/app/static/seminario.html"
+# Renderização final
+page_html = build_full_page()
 
 st.markdown(streamlit_overrides, unsafe_allow_html=True)
-st.iframe(PAGE_URL, height="content", width="stretch")
+st.components.v1.html(page_html, height=6500, scrolling=False)
