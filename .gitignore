@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Gerado automaticamente pelo app
+static/seminario.html
+
+# Node
+node_modules/
