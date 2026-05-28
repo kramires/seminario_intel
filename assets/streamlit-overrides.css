@@ -2,23 +2,13 @@
 footer {visibility: hidden !important;}
 header {visibility: hidden !important;}
 
-/* Streamlit Cloud: botão "Manage app" e avatar do GitHub */
-[data-testid="manage-app-button"],
-[data-testid="appCreatorAvatar"],
-[data-testid="stToolbar"],
-[data-testid="stStatusWidget"],
-[data-testid="stDecoration"],
-.stDeployButton,
-div[class*="viewerBadge"],
-div[class*="manageApp"],
-div[class*="ManageApp"],
-section[data-testid="stSidebar"] + div > div:last-child,
-.stApp > div:last-child > div:last-child {
-    display: none !important;
-    visibility: hidden !important;
-    opacity: 0 !important;
-    pointer-events: none !important;
-}
+/* Streamlit Cloud: botão "Manage app" com avatar do GitHub */
+[data-testid="manage-app-button"] {display: none !important;}
+[data-testid="appCreatorAvatar"] {display: none !important;}
+[data-testid="stAppViewBlockContainer"] + div {display: none !important;}
+.stDeployButton {display: none !important;}
+div[class*="viewerBadge"] {display: none !important;}
+#stDecoration {display: none !important;}
 
 div[data-testid="stDecoration"] {display: none !important;}
 div[data-testid="stHeader"] {display: none !important;}
