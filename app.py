@@ -106,7 +106,6 @@ img_wellington = b64("imagens/palestrantes/profWellington.jpeg")
 img_mauricio  = b64("imagens/palestrantes/mauriciuViegas.jpeg")
 img_heitor    = b64("imagens/palestrantes/Tc R1 Heitor.jpeg")
 img_marcio    = b64("imagens/palestrantes/marcioLopes.jpeg")
-img_hero      = b64("imagens/esimex_noturna.jpg")
 img_concepcao = b64("imagens/banner.jpeg")
 img_auditorio = b64("imagens/auditorio_seminario.jpeg")
 
@@ -119,8 +118,6 @@ else:
     img_brasil = ""
     _brasil_img_tag = '<div class="w-32 h-32 rounded-full border-4 border-primary mb-4 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-on-surface-variant">person</span></div>'
     _brasil_modal_img = ""
-img_esimex_symbol = b64("imagens/simbolo_esimex1.png")
-img_cie_symbol    = b64("imagens/simbolo_cie.png")
 
 # ==========================================================================
 # PARSER: TIMELINE DINÂMICA
@@ -182,7 +179,6 @@ html_body = f"""
     <nav class="bg-surface/90 backdrop-blur-xl font-body-md text-body-md fixed top-0 left-0 right-0 w-full z-50 border-b border-outline-variant/20 shadow-sm">
         <div class="max-w-container-max mx-auto h-20 px-gutter flex justify-between items-center">
             <div class="font-headline-md text-headline-md font-bold text-primary flex items-center min-w-0">
-                <img src="{img_esimex_symbol}" class="h-10 w-auto inline-block mr-3 align-middle flex-shrink-0" alt="EsIMEx">
                 <span class="hidden sm:inline truncate">Seminário de Inteligência</span>
             </div>
             <div class="hidden md:flex gap-6 items-center">
@@ -192,16 +188,13 @@ html_body = f"""
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#palestrantes">Palestrantes</a>
                 <a class="text-on-surface-variant hover:text-primary transition-all duration-300 font-medium" href="#inscricoes">Inscrições</a>
             </div>
-            <div class="flex items-center gap-4 flex-shrink-0">
-                <img src="{img_cie_symbol}" class="h-10 w-auto" alt="CIE">
-            </div>
         </div>
     </nav>
 
     <!-- 2. HERO SECTION — slideshow com crossfade -->
     <section id="inicio" style="position:relative; width:100%; height:600px; min-height:480px; display:flex; align-items:flex-end; justify-content:center; overflow:hidden; margin-bottom:6rem;">
-        <img src="{img_hero}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; z-index:0; animation:heroSlide1 14s ease-in-out infinite;">
-        <img src="{img_concepcao}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:0; animation:heroSlide2 14s ease-in-out infinite; opacity:0;">
+        <img src="{img_concepcao}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 35%; z-index:0; animation:heroSlide1 14s ease-in-out infinite;">
+        <img src="{img_auditorio}" alt="" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; object-position:center 30%; z-index:0; animation:heroSlide2 14s ease-in-out infinite; opacity:0;">
         <div style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; background:linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.55) 45%, rgba(0,0,0,0.38) 100%);"></div>
         <div style="position:relative; z-index:2; text-align:center; padding:0 2rem 3rem; max-width:56rem; width:100%;">
             <span style="display:inline-block; padding:0.25rem 0.75rem; background:rgba(255,255,255,0.2); color:#fff; font-size:0.75rem; font-weight:600; border-radius:9999px; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:1rem;">
@@ -593,7 +586,6 @@ html_body = f"""
             </div>
             <div class="col-span-1 flex flex-col gap-3 mt-6 md:mt-0">
                 <h5 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Links Oficiais</h5>
-                <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://www.eb.mil.br" target="_blank">Exército Brasileiro</a>
                 <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://www.abin.gov.br" target="_blank">ABIN / SISBIN</a>
                 <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://www.gov.br/esd/pt-br" target="_blank">Escola Superior de Defesa</a>
                 <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://portal.stf.jus.br/" target="_blank">STF</a>
