@@ -464,7 +464,7 @@ html_body = f"""
                     </h3>
                     <div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">
                         <p class="leading-relaxed">
-                            A inscrição é obrigatória tanto para a modalidade presencial quanto para acompanhamento online.
+                            A inscrição é obrigatória.
                         </p>
                     </div>
                     <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
@@ -494,16 +494,8 @@ html_body = f"""
                     <div class="flex items-start gap-4 mb-6">
                         <span class="material-symbols-outlined text-primary text-3xl">location_on</span>
                         <div>
-                            <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Local Presencial</h4>
+                            <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Local</h4>
                             <p class="font-body-md text-body-md text-on-surface-variant">Auditório General Sydrião - Escola de Inteligência Militar do Exército (EsIMEx)</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-4">
-                        <span class="material-symbols-outlined text-primary text-3xl">devices</span>
-                        <div>
-                            <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Formato Híbrido</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant">Transmissão online segura.</p>
-                            {f'<a href="{LINK_TRANSMISSAO}" target="_blank" class="inline-block mt-2 text-sm font-semibold text-primary hover:underline">Acessar transmissão ao vivo →</a>' if LINK_TRANSMISSAO else '<span class="inline-block mt-2 text-sm text-on-surface-variant/60 italic">Link de transmissão em breve</span>'}
                         </div>
                     </div>
                 </div>
@@ -512,7 +504,7 @@ html_body = f"""
                     <div class="mb-6">
                         <span class="material-symbols-outlined text-tertiary text-3xl mb-2">local_cafe</span>
                         <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Coffee break</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Intervalos para interação e networking no Salão de Honra da Escola.</p>
+                        <p class="font-body-md text-body-md text-on-surface-variant">Intervalos para interação e networking.</p>
                     </div>
                     <div>
                         <span class="material-symbols-outlined text-tertiary text-3xl mb-2">forum</span>
@@ -583,12 +575,6 @@ html_body = f"""
                 <p class="text-xs text-on-surface-variant/70 leading-relaxed">
                     Este portal destina-se a fins estritamente informativos e de intercâmbio acadêmico-militar. Toda a comunicação do evento segue canais seguros.
                 </p>
-            </div>
-            <div class="col-span-1 flex flex-col gap-3 mt-6 md:mt-0">
-                <h5 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Links Oficiais</h5>
-                <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://www.abin.gov.br" target="_blank">ABIN / SISBIN</a>
-                <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://www.gov.br/esd/pt-br" target="_blank">Escola Superior de Defesa</a>
-                <a class="text-on-surface-variant hover:text-tertiary transition-colors w-fit text-sm" href="https://portal.stf.jus.br/" target="_blank">STF</a>
             </div>
             <div class="col-span-1 flex flex-col gap-3 mt-6 md:mt-0">
                 <h5 class="font-bold text-primary text-sm uppercase tracking-wider mb-2">Contato e Apoio</h5>
