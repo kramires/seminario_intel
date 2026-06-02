@@ -322,7 +322,7 @@ html_body = f"""
                     <div class="p-6 rounded-xl bg-surface-container-lowest border border-outline-variant/20 hover-lift flex flex-col justify-between">
                         <div>
                             <span class="material-symbols-outlined text-primary text-3xl mb-4">military_tech</span>
-                            <h4 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">32º Anos da EsIMEx</h4>
+                            <h4 class="font-body-lg text-body-lg font-bold text-on-surface mb-2">32 Anos da EsIMEx</h4>
                             <p class="font-body-md text-body-md text-on-surface-variant">Celebrar e enaltecer a história e a contribuição estratégica da Escola de Inteligência Militar.</p>
                         </div>
                     </div>
