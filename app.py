@@ -605,7 +605,7 @@ html_body = f"""
         // Dados de Biografia dos Palestrantes para evitar escape de aspas no HTML
         const speakersData = {{
             "mourao": {{
-                "name": "Senador Gen Ex Mourão",
+                "name": "Senador Hamilton Mourão",
                 "role": "Membro do CCAI / Senador da República",
                 "bio": "General de Exército da Reserva, ex-Vice-Presidente da República e atualmente Senador da República. Possui extensa carreira militar com atuação na área estratégica e operacional. Exerce papel fundamental como membro da Comissão Mista de Controle das Atividades de Inteligência (CCAI).",
                 "image": "{img_mourao}"
