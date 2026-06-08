@@ -383,7 +383,7 @@ html_body = f"""
                 <!-- Palestrante 1 -->
                 <div class="glass-panel p-6 rounded-xl border border-outline-variant/20 bg-surface-container-low text-center flex flex-col items-center hover-lift">
                     <img class="w-32 h-32 rounded-full object-cover border-4 border-primary mb-4" src="{img_mourao}" alt="Senador Gen Ex Mourão">
-                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Senador Gen Ex Mourão</h4>
+                    <h4 class="font-body-lg text-body-lg font-bold text-on-surface">Senador Hamilton Mourão</h4>
                     <p class="font-label-caps text-label-caps text-tertiary mb-4">CCAI</p>
                     <button class="bg-primary/10 text-primary hover:bg-primary hover:text-on-primary px-4 py-2 rounded-lg text-sm font-semibold transition-all duration-300" onclick="showBio('mourao')">
                         Ver Biografia
