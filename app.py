@@ -111,7 +111,7 @@ img_auditorio = b64("imagens/auditorio_seminario.jpeg")
 
 _brasil_path = os.path.join(BASE_DIR, "imagens", "palestrantes", "cel_brasil.jpeg")
 if os.path.exists(_brasil_path):
-    img_brasil = b64("imagens/palestrantes/cel_brasil.jpeg")
+    img_brasil = b64("imagens/palestrantes/cel_brasil.jpg")
     _brasil_img_tag = f'<img class="w-32 h-32 rounded-full object-cover border-4 border-primary mb-4" src="{img_brasil}" alt="Cel R1 Mario Brasil">'
     _brasil_modal_img = img_brasil
 else:
@@ -613,7 +613,7 @@ html_body = f"""
             "anna": {{
                 "name": "Anna Cruz",
                 "role": "Instrutora da Escola de Inteligência (Esint)",
-                "bio": "Pesquisadora sênior da Escola de Inteligência (Esint) da ABIN. Doutora em Segurança e Defesa, com mais de 15 anos de atuação dedicados ao estudo de diretrizes doutrinárias de inteligência civil e estatal, bem como dilemas éticos na atividade.",
+                "bio": "Pesquisadora sênior da Escola de Inteligência (Esint) da ABIN. Tem mais de 18 anos de atuação dedicados ao estudo de diretrizes doutrinárias de inteligência civil e estatal, bem como dilemas éticos na atividade.",
                 "image": ""
             }},
             "wellington": {{
@@ -630,8 +630,8 @@ html_body = f"""
             }},
             "mauricio": {{
                 "name": "Maurício Viegas",
-                "role": "Assessor de Tecnologia do STF",
-                "bio": "Bacharel em Direito e Engenharia de Computação, assessora o STF em temas cibernéticos. Referência em Direito Digital, coordena grupos de estudo voltados para o combate à desinformação estruturada e o amparo constitucional da verdade pública.",
+                "role": "Assessor de Inteligência do STF",
+                "bio": "Bacharel em Direito e Especialização em Inteligência Estratégica. Assessor de Inteligência no STF. Fundador do Instituto Brasileiro de Análise de Veracidade (IBRAV). Coordenou grupos de estudo voltados para o combate à desinformação.",
                 "image": "{img_mauricio}",
                 "objectPos": "top"
             }},
