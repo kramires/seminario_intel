@@ -109,7 +109,7 @@ img_marcio    = b64("imagens/palestrantes/marcioLopes.jpeg")
 img_concepcao = b64("imagens/banner.jpeg")
 img_auditorio = b64("imagens/auditorio_seminario.jpeg")
 
-_brasil_path = os.path.join(BASE_DIR, "imagens", "palestrantes", "cel_brasil.jpeg")
+_brasil_path = os.path.join(BASE_DIR, "imagens", "palestrantes", "cel_brasil.jpg")
 if os.path.exists(_brasil_path):
     img_brasil = b64("imagens/palestrantes/cel_brasil.jpg")
     _brasil_img_tag = f'<img class="w-32 h-32 rounded-full object-cover border-4 border-primary mb-4" src="{img_brasil}" alt="Cel R1 Mario Brasil">'
