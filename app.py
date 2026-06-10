@@ -101,7 +101,7 @@ def b64(relative_path):
 
 img_qrcode    = b64("imagens/qrcode.png")
 img_mourao    = b64("imagens/palestrantes/genMourao.jpeg")
-_anna_placeholder = '<div class="w-32 h-32 rounded-full border-4 border-primary mb-4 bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-5xl text-on-surface-variant">person</span></div>'
+_anna_placeholder = b64("imagens/palestrantes/Anna.jpg")
 img_wellington = b64("imagens/palestrantes/profWellington.jpeg")
 img_mauricio  = b64("imagens/palestrantes/mauriciuViegas.jpeg")
 img_heitor    = b64("imagens/palestrantes/Tc R1 Heitor.jpeg")
@@ -460,7 +460,7 @@ html_body = f"""
                         Credenciamento
                     </span>
                     <h3 class="font-headline-xl text-headline-xl font-headline-xl-mobile text-headline-xl-mobile text-on-surface mb-4 font-bold">
-                        Inscrições para o Evento
+                        Inscrições Encerradas Temporariamente
                     </h3>
                     <div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">
                         <p class="leading-relaxed">
@@ -468,7 +468,7 @@ html_body = f"""
                         </p>
                     </div>
                     <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
-                        Acessar Formulário de Inscrição
+                        Acessar Formulário de Inscrição (Bloqueado temporariamente)
                     </a>
                 </div>
                 <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-outline-variant/20">
@@ -612,8 +612,8 @@ html_body = f"""
             }},
             "anna": {{
                 "name": "Anna Cruz",
-                "role": "Instrutora da Escola de Inteligência (Esint)",
-                "bio": "Pesquisadora sênior da Escola de Inteligência (Esint) da ABIN. Tem mais de 18 anos de atuação dedicados ao estudo de diretrizes doutrinárias de inteligência civil e estatal, bem como dilemas éticos na atividade.",
+                "role": "DIRETORA DA ESCOLA DE INTELIGÊNCIA (ESINT)",
+                "bio": "Pesquisadora do Núcleo de Pesquisa em Inteligência da Agência Brasileira de Inteligência (NUPI/ABIN). Tem mais de 18 anos de atuação dedicados ao estudo de diretrizes doutrinárias de inteligência civil e estatal, bem como dilemas éticos na atividade.",
                 "image": ""
             }},
             "wellington": {{
