@@ -460,7 +460,7 @@ html_body = f"""
                         Credenciamento
                     </span>
                     <h3 class="font-headline-xl text-headline-xl font-headline-xl-mobile text-headline-xl-mobile text-on-surface mb-4 font-bold">
-                        Inscrições Encerradas Temporariamente
+                       No primeiro dia de inscrições atingimos o limite de ocupação do auditório. Caso haja interesse sua inscrição estará em fila de espera para aprovação. Após aprovado o senhor(a) será contactado(a). 
                     </h3>
                     <div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">
                         <p class="leading-relaxed">
@@ -468,7 +468,7 @@ html_body = f"""
                         </p>
                     </div>
                     <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
-                        Acessar Formulário de Inscrição (Bloqueado temporariamente)
+                        Acessar Formulário de Inscrição
                     </a>
                 </div>
                 <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-outline-variant/20">
