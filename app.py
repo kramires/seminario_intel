@@ -460,7 +460,7 @@ html_body = f"""
                         Credenciamento
                     </span>
                     <h3 class="font-headline-xl text-headline-xl font-headline-xl-mobile text-headline-xl-mobile text-on-surface mb-4 font-bold">
-                       No primeiro dia de inscrições atingimos o limite de ocupação do auditório. Caso haja interesse sua inscrição estará em fila de espera para aprovação. Após aprovado o senhor(a) será contactado(a). 
+                       No primeiro dia de inscrições atingimos o limite de ocupação do auditório. Caso haja interesse sua inscrição estará em fila de espera para aprovação. Após aprovado os inscritos serão contatados. 
                     </h3>
                     <div class="space-y-4 font-body-lg text-body-lg text-on-surface-variant mb-8 max-w-3xl">
                         <p class="leading-relaxed">
