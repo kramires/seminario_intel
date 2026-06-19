@@ -466,11 +466,11 @@ html_body = f"""
                         <p class="leading-relaxed">
                             A inscrição é obrigatória.
                         </p>
-                #     </div>
-                #     <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
-                #         Acessar Formulário de Inscrição
-                #     </a>
-                # </div>
+                    </div>
+                    <a href="{LINK_INSCRICAO}" target="_blank" class="inline-block bg-primary text-on-primary px-8 py-4 rounded-xl font-bold hover:bg-primary-container transition-all duration-300 shadow-md">
+                        Acessar Formulário de Inscrição
+                    </a>
+                </div>
                 <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-outline-variant/20">
                     <img class="w-48 h-48 object-contain" src="{img_qrcode}" alt="QR Code de Inscrição">
                     <p class="mt-4 text-sm text-on-surface-variant text-center">Aponte a câmera para se inscrever</p>
