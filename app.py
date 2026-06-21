@@ -455,7 +455,7 @@ html_body = f"""
         <!-- 8. INSCRIÇÕES -->
         <section id="inscricoes" class="mb-section-gap relative rounded-2xl overflow-hidden glass-panel bg-surface-container-low border border-outline-variant/30 p-8 md:p-12 soft-shadow">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-                <div class="lg:col-span-8">
+                <div class="lg:col-span-12">
                     <span class="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-semibold rounded-full uppercase tracking-widest mb-4">
                         Credenciamento
                     </span>
@@ -471,10 +471,12 @@ html_body = f"""
                         Inscrições Encerradas
                     </button>
                 </div>
+                <!--
                 <div class="lg:col-span-4 flex flex-col items-center justify-center p-6 bg-white rounded-xl border border-outline-variant/20">
                     <img class="w-48 h-48 object-contain" src="{img_qrcode}" alt="QR Code de Inscrição">
                     <p class="mt-4 text-sm text-on-surface-variant text-center">Aponte a câmera para se inscrever</p>
                 </div>
+                -->
             </div>
         </section>
 
